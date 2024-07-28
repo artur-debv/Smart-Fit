@@ -3,7 +3,8 @@
 
 # Preview
 
-![preview](preview.png)
+![preview](<img width="697" alt="preview" src="https://github.com/user-attachments/assets/d2d2c77e-e26e-4ac3-9b1a-6797f9ed21f5">
+)
 
 # Proposta de Teste
 > A Smart Fit, por atuar no segmento de fitness, passou por várias mudanças na pandemia. Foi necessário desenvolver uma página para buscar unidades **fechadas** ou **abertas** para consulta e reserva.
