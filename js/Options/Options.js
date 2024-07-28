@@ -4,6 +4,8 @@ const clean = document.querySelector('.clean');
 
 const Closed = document.querySelector('.containers');
 
+ console.log(Closed)
+
 
 clean.addEventListener('click', (event) => {
     event.preventDefault();
