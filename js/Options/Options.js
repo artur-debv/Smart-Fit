@@ -1,6 +1,6 @@
 const Option = document.querySelectorAll('input[name="hours"]');
 
-Option.foreach((e) => {
+Option.forEach((e) => {
     e.addEventListener('change', (event) => {
         console.log(event)
     })
