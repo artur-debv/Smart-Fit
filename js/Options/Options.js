@@ -2,7 +2,7 @@ const Option = document.querySelectorAll('input[type="radio"]');
 
 const clean = document.querySelector('.clean');
 
-const Closed = document.querySelector('.containers');
+const Closed = document.querySelector('#closed');
 
  console.log(Closed)
 
