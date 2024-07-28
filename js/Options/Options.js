@@ -4,15 +4,13 @@ const clean = document.querySelector('.clean');
 
 const Closed = document.querySelector('.containers');
 
-closed.addEventListener('change', (event) => {
-    event.checked = false
-})
 
 clean.addEventListener('click', (event) => {
     event.preventDefault();
     Option.forEach((e) => {
         e.checked = false;
     })
+    Closed.checked = false
 })
 
 Option.forEach((event) => {
