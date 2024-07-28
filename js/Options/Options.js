@@ -1,4 +1,4 @@
-const Option = document.querySelectorAll('input[name="hours"]');
+const Option = document.querySelectorAll('input[radio]');
 
 Option.forEach((e) => {
     e.addEventListener('change', (event) => {
