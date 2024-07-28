@@ -2,14 +2,16 @@ const Option = document.querySelectorAll('input[type="radio"]');
 
 const clean = document.querySelector('.clean');
 
-clean.addEventListener('click', () => {
+clean.addEventListener('click', (event) => {
+    event.preventDefault();
     Option.forEach((e) => {
         e.checked = false;
     })
 })
 
-Option.forEach((e) => {
-    e.addEventListener('change', (event) => {
+Option.forEach((event) => {
+    event.preventDefault();
+    event.addEventListener('change', (event) => {
         console.log(`Você selecionou: ${event.target.value}`)
     })
 })
