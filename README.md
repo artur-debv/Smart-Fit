@@ -1,5 +1,5 @@
 # Front-end Smart Fit
-> Esse é um pequeno projeto criado como base para a avaliação de habilidades técnicas para o papel de Front-end.
+> Esse é um pequeno projeto criado como base para a avaliação de habilidades técnicas para o papel de Front-end, objetivo e mostrar quais academias está em aberto na época da pandemia .
 
 # Preview
 
@@ -34,31 +34,3 @@
 - Formulário de busca com filtros
 - Legenda
 - Lista de unidades
-
-### Materiais disponíveis
-> Em `./_material` você encontra:
-- layout (mobile e desktop)
-- Textos
-- Cores
-- imagens
-- fonts
-
-# Entrega
-> No seu github, crie um repositório público com o teste e nos envie (caso queira enviar a url do app funcionando no Heroku, vercel ou equivalente seria um plus)
-
-> Não faça Pull Request para esse repositório.
-
-### Avaliação
-- Instruções no README.md
-- Lógica de programação
-- Qualidade de código
-- Qualidade de entrega (como se fosse para produção)
-- Fidelidade ao layout proposto
-- Responsive design
-- cross browser and device (mobile, tablet e desktop)
-
-> Plus
-- Teste unitário e e2e (teste apenas o que achar mais importante).
-- Travis CI
-- App em produção (Ex.: Heroku, Vercel e etc...)
-- Rodando com Docker localmente
