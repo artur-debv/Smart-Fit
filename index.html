@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fit</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo_container">
+                <img src="/assets/images/logo.svg" alt="">
+            </div>
+            <div class="text_container">
+                <div class="heading">
+                    <h1 class="title">
+                        REABERTURA
+                        <br>
+                        SMART FIT
+                    </h1>
+                    <span class="heading-border"></span>
+                </div>
+                <p>O horário de funcionamento das nossas unidades está seguindo os decretos de cada município. Por
+                    isso, confira aqui se a sua unidade está aberta e as medidas de segurança que estamos seguindo.
+                </p>
+        </header>
+        <form action="">
+            <div class="form_container">
+                <div class="hours_container">
+                    <img class="logo_hours" src="./assets/images/icon-hour.png" alt="">
+                    <h1 class="title_hours">Horário</h1>
+                </div>
+                <h3 class="title_time">Qual horário você quer treinar?</h3>
+                <div class="hours">
+                    <div class="hour_morning">
+                        <input type="radio" name="hours" id="morning">
+                        <label for="morning">Manhã</label>
+                        <span>06:00 ás 12h</span>
+                    </div>
+                    <div class="hour_afternoon">
+                        <input type="radio" name="hours" id="afternoon">
+                        <label for="afternoon">Tarde</label>
+                        <span>12:01 ás 18h</span>
+                    </div>
+                    <div class="hour_night">
+                        <input type="radio" name="hours" id="night">
+                        <label for="night">Noite</label>
+                        <span>18:01 ás 23h</span>
+                    </div>
+                    <div class="containers">
+                        <div class="closed units">
+                            <input type="checkbox" name="closed" id="closed">
+                            <label for="closed">Exibir unidades fechadas</label>
+                        </div>
+                        <div class="results">
+                            <!--<span class="result">Resultados encontrados</span>-->
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="find">Encontrar Unidade</button>
+                        <button class="clean">Limpar</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </form>
+    </div>
+    <div class="subtitles">
+        <div class="Máscara">
+            <h4>Máscara</h4>
+            <div class="masks">
+                <div class="required-mask_container">
+                    <img class="required-mask" src="/assets/images/required-mask.png" alt="">
+                    <p>Obrigatório</p>
+                </div>
+                <div class="recommended-mask_container">
+                    <img class="recommended-mask" src="/assets/images/recommended-mask.png" alt="">
+                    <p>Recomendado</p>
+                </div>
+            </div>
+        </div>
+        <div class="Toalha">
+            <h4>Toalha</h4>
+            <div class="towels">
+                <div class="required-towel_container">
+                    <img class="required-towel" src="/assets/images/required-towel.png" alt="">
+                    <p>Obrigatório</p>
+                </div>
+                <div class="recommended-towel_container">
+                    <img class="recommended-towel" src="/assets/images/recommended-towel.png" alt="">
+                    <p>Recomendado</p>
+                </div>
+            </div>
+        </div>
+        <div class="Bebedouro">
+            <h4>Bebedouro</h4>
+            <div class="fountains">
+                <div class="required-fountain_container">
+                    <img class="partial-fountain" src="/assets/images/partial-fountain.png" alt="">
+                    <p>Parcial</p>
+                </div>
+                <div class="forbidden-fountain_container">
+                    <img class="forbidden-fountain" src="/assets/images/forbidden-fountain.png" alt="">
+                    <p>Proibido</p>
+                </div>
+            </div>
+        </div>
+        <div class="Vestiários">
+            <h4>Vestiário</h4>
+            <div class="lockerrooms">
+                <div class="required-lockerroom_container">
+                    <img class="required-lockerroom" src="/assets/images/required-lockerroom.png" alt="">
+                    <p>Liberado</p>
+                </div>
+                <div class="partial-lockerroom_container">
+                    <img class="partial-lockerroom" src="/assets/images/partial-lockerroom.png" alt="">
+                    <p>Parcial</p>
+                </div>
+                <div class="forbidden-lockerroom_container">
+                    <img class="forbidden-lockerroom" src="/assets/images/forbidden-lockerroom.png" alt="">
+                    <p>Fechado</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <img src="/assets/images/logo.svg" alt="">
+    </footer>
+    <script src="/js/Options/Option.js"></script>
+</body>
+
+</html>
