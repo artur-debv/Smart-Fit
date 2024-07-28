@@ -10,7 +10,6 @@ clean.addEventListener('click', (event) => {
 })
 
 Option.forEach((event) => {
-    event.preventDefault();
     event.addEventListener('change', (event) => {
         console.log(`Você selecionou: ${event.target.value}`)
     })
