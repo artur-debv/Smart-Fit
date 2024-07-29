@@ -1,10 +1,6 @@
 # Front-end Smart Fit
 > Esse é um pequeno projeto criado como base para a avaliação de habilidades técnicas para o papel de Front-end, objetivo e mostrar quais academias está em aberto na época da pandemia .
 
-# Preview
-
-
-<img width="697" alt="preview" src="https://github.com/user-attachments/assets/23454417-7317-413b-98b3-0bd9fad28354">
 
 # Proposta de Teste
 > A Smart Fit, por atuar no segmento de fitness, passou por várias mudanças na pandemia. Foi necessário desenvolver uma página para buscar unidades **fechadas** ou **abertas** para consulta e reserva.
