@@ -170,19 +170,29 @@ header .logo-container img {
   margin-bottom: 20px;
 }
 
-span {
-  position: absolute;
-  right: 0px;
-}
-
 .containers {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
 }
 
-span {
-  position: none;
+.span_morning {
+  position: absolute;
+  right: 0px;
+}
+
+.span_afternoon {
+  position: absolute;
+  right: 0px;
+}
+
+.span_night {
+  position: absolute;
+  right: 0px;
+}
+
+.results .result {
+  position: inherit;
 }
 
 .buttons {
