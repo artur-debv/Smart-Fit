@@ -9,8 +9,12 @@ searchgyms.addEventListener('click', (event) => {
         }
     }).then(response => response.json())
         .then(data => {
-            console.log(data);
+            data.forEach(element => {
+                const result = document.querySelector(".result")
+
+                result.innerHTML += `${element.id}`
+            })
+                .catch(error => console.log(error))
         })
-        .catch(error => console.log(error))
 })
 
