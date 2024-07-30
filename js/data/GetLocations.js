@@ -15,6 +15,8 @@ searchgyms.addEventListener('click', (event) => {
             for (let i = 0; i < data.locations.length; i++) {
                 let list = document.querySelector(".list")
                 let li = document.createElement("li")
+
+                list.appendChild(li)
             }
            
         })
