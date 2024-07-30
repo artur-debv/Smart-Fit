@@ -10,7 +10,7 @@ searchgyms.addEventListener('click', (event) => {
     }).then(response => response.json())
         .then(data => {
             const result = document.querySelector(".result")
-            result.innerHTML = data.title
+            result.innerHTML = data.locations.title
         })
 })
 
