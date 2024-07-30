@@ -13,7 +13,7 @@ searchgyms.addEventListener('click', (event) => {
           const result = document.querySelector('.result')
 
           data.locations.forEach((location) => {
-           result.innerHTML = console.log(location.lenght)
+           console.log(location)
         })
 })
 })
