@@ -14,8 +14,9 @@ searchgyms.addEventListener('click', (event) => {
 
           result.innerHTML = `Resultados encontrados: ${data.locations.length}`
 
-          
-           
+          data.locations.forEach((location) => {
+            console.log(location)
         })
+})
 })
 
