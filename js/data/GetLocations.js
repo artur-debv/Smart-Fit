@@ -10,7 +10,9 @@ searchgyms.addEventListener('click', (event) => {
     }).then(response => response.json())
         .then(data => {
             
-          console.log(data.locations.length)
+          const result = document.querySelector('.result')
+
+          result.innerHTML = `Resultados encontrados: ${data.locations.length}`
 
           
            
