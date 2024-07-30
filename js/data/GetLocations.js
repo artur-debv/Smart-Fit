@@ -11,6 +11,11 @@ searchgyms.addEventListener('click', (event) => {
         .then(data => {
             
           console.log(data.locations.length)
+
+            for (let i = 0; i < data.locations.length; i++) {
+                let list = document.querySelector(".list")
+                let li = document.createElement("li")
+            }
            
         })
 })
