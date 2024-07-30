@@ -11,10 +11,10 @@ searchgyms.addEventListener('click', (event) => {
         .then(data => {
             
           const result = document.querySelector('.result')
-
-        data.forEach((e) => {
-            console.log(e)
-        })
+          data.locations.forEach((location) => {
+            console.log(location); // Log para depuração
+            result.innerHTML += `<p>ID: ${location.id} - Nome: ${location.name}</p>`;
+        });
 })
 })
 
