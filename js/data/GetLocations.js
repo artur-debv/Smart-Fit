@@ -9,9 +9,10 @@ searchgyms.addEventListener('click', (event) => {
         }
     }).then(response => response.json())
         .then(data => {
-            console.log(data)
-            const result = document.querySelector(".result")
-            result.innerHTML = data.locations.title
+            console.log(data.locations)
+
+
+           
         })
 })
 
