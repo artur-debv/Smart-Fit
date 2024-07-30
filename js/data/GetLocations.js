@@ -9,12 +9,10 @@ searchgyms.addEventListener('click', (event) => {
         }
     }).then(response => response.json())
         .then(data => {
-            data.forEach(element => {
-                const result = document.querySelector(".result")
-
-                result.innerHTML += `${element.id}`
-            })
-                .catch(error => console.log(error))
+           data.forEach(data => {
+               const result = document.querySelector(".result")
+               result.innerHTML = `Resultados encontrados: ${data.length}`
+           })
         })
 })
 
