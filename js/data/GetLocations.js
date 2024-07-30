@@ -12,12 +12,7 @@ searchgyms.addEventListener('click', (event) => {
             
           console.log(data.locations.length)
 
-            for (let i = 0; i < data.locations.length; i++) {
-                let list = document.querySelector(".list")
-                let li = document.createElement("li")
-
-                list.appendChild(li)
-            }
+          
            
         })
 })
