@@ -8,10 +8,12 @@ searchgyms.addEventListener('click', (event) => {
             "Content-Type": "application/json"
         }
     }).then(response => response.json())
-        .then(locations => {
+        .then(data => {
             
-          locations.forEach(location => {
-            console.log(location)
+          const result = document.querySelector('.result')
+
+          data.locations.forEach((location) => {
+           result.innerHTML = console.log(location.lenght)
         })
 })
 })
