@@ -10,7 +10,7 @@ searchgyms.addEventListener('click', (event) => {
     }).then(response => response.json())
         .then(data => {
             
-          console.log(data.locations)
+          console.log(data.locations.content)
            
         })
 })
