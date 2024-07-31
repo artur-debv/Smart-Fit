@@ -419,6 +419,12 @@ h3 {
   font-weight: bold;
 }
 
-span.opened {
+.status-aberto {
   color: green;
+  font-weight: bold;
+}
+
+.status-fechado {
+  color: red;
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

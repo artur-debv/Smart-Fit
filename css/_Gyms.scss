@@ -33,7 +33,13 @@ h3{
 }
 
 
+.status-aberto {
+    color: green; 
+    font-weight: bold; 
+}
 
-span.opened{
-    color: green;
+
+.status-fechado {
+    color: red; 
+    font-weight: bold; 
 }
