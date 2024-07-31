@@ -10,21 +10,20 @@ searchgyms.addEventListener('click', (event) => {
     }).then(response => response.json())
         .then(data => { 
           const result = document.querySelector('.result')
+          const cards = document.querySelector('.cards')
           result.innerText = `Resultados encontrados: ${data.locations.length}`
 
           data.locations.forEach(element => {
-            const box = document.createElement('div')
-            box.classList.add('box')
-            box.innerText = `
-                <h3>${element.content}</h3>
+            cards.innerHTML += `
+
+            <li class="gyms">
+                <h2>${element.content}</h2>
                 <p>${element.mask}</p>
                 <p>${element.towel}</p>
                 <p>${element.fountain}</p>
-                <p>${element.lockerroom}</p>
+                <p>${element.locker_room}</p>
+            </li>
             `
-            console.log(box)
-
-            result.appendChild(box)
 
         });
 })
