@@ -22,11 +22,11 @@ searchgyms.addEventListener('click', (event) => {
                 <h3>${element.title}</h3>
                 <h2>${element.content}</h2>
                 <div class="requirements">
-                    <img class="mask" src="/assets/images/required-mask.png" alt="">
-                    <img class="towel" src="/assets/images/required-towel.png" alt="">
-                    <img class="fountain" src="/assets/images/partial-fountain.png" alt="">
-                    <img class="locker" src="/assets/images/allowed-lockerroom.png" alt="">
-                </div>
+                ${element.mask === "required" ? '<img class="mask" src="/assets/images/required-mask.png" alt="Mask Required">' : ''}
+                ${element.towel === "required" ? '<img class="towel" src="/assets/images/required-towel.png" alt="Towel Required">' : ''}
+                ${element.fountain === "partial" ? '<img class="fountain" src="/assets/images/partial-fountain.png" alt="Partial Fountain">' : ''}
+                ${element.locker_room === "allowed" ? '<img class="locker" src="/assets/images/allowed-lockerroom.png" alt="Locker Room Allowed">' : ''}
+               </div>
             </li>
             `
 
