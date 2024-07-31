@@ -397,4 +397,13 @@ footer img {
   gap: 8px;
   width: 250px;
   height: 400px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 90%;
+  margin: 0 auto;
 }/*# sourceMappingURL=main.css.map */
