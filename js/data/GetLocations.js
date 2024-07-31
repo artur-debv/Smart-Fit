@@ -13,16 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const result = document.querySelector('.result');
                 const cards = document.querySelector('.cards');
-                const showClosed = showClosedCheckbox.checked;
+               
                 
                 result.innerText = `Resultados encontrados: ${data.locations.length}`;
                 cards.innerHTML = "";
 
                 data.locations.forEach(element => {
-                    // Filtrar academias fechadas com base no estado do checkbox
-                    if (!showClosed && !element.opened) {
-                        return; // Ignorar academias fechadas se o checkbox não estiver marcado
-                    }
+                  
 
                     // Definindo as URLs com base nas propriedades
                     const maskImage = imageMap.mask[element.mask] || '';
