@@ -14,7 +14,7 @@ searchgyms.addEventListener('click', (event) => {
           result.innerText = `Resultados encontrados: ${data.locations.length}`
           cards.innerHTML = "";
 
-          /*data.locations.forEach(element => {
+          data.locations.forEach(element => {
             cards.innerHTML += `
 
             <li class="gyms">
@@ -26,7 +26,7 @@ searchgyms.addEventListener('click', (event) => {
             </li>
             `
 
-        });*/
+        });
 })
 })
 
