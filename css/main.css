@@ -429,4 +429,20 @@ h3 {
   flex-wrap: wrap;
   width: 100%;
   gap: 24px;
+}
+
+.mask {
+  height: 50px;
+}
+
+.towel {
+  height: 50px;
+}
+
+.fountain {
+  height: 50px;
+}
+
+.locker {
+  height: 50px;
 }/*# sourceMappingURL=main.css.map */
