@@ -1,4 +1,4 @@
-const searchgyms = document.querySelector(".find")
+const searchgyms = document.querySelector(".find");
 
 searchgyms.addEventListener('click', (event) => {
     event.preventDefault();
@@ -9,30 +9,31 @@ searchgyms.addEventListener('click', (event) => {
         }
     }).then(response => response.json())
         .then(data => {
-            const result = document.querySelector('.result')
-            const cards = document.querySelector('.cards')
-            result.innerText = `Resultados encontrados: ${data.locations.length}`
+            const result = document.querySelector('.result');
+            const cards = document.querySelector('.cards');
+            result.innerText = `Resultados encontrados: ${data.locations.length}`;
             cards.innerHTML = "";
 
             data.locations.forEach(element => {
+                // Definindo as imagens com base nas propriedades
+                const maskImage = element.mask === "required" ? '/assets/images/required-mask.png' : '';
+                const towelImage = element.towel === "required" ? '/assets/images/required-towel.png' : '';
+                const fountainImage = element.fountain === "partial" ? '/assets/images/partial-fountain.png' : '';
+                const lockerImage = element.locker_room === "allowed" ? '/assets/images/allowed-lockerroom.png' : '';
+
                 cards.innerHTML += `
-
-            <li class="gyms">
-                <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
-                <h3>${element.title}</h3>
-                <h2>${element.content}</h2>
-                <div class="requirements">
-                ${element.mask === "required" ? '<img class="mask" src="/assets/images/required-mask.png" alt="Mask Required">' : ''}
-                ${element.towel === "required" ? '<img class="towel" src="/assets/images/required-towel.png" alt="Towel Required">' : ''}
-                ${element.fountain === "partial" ? '<img class="fountain" src="/assets/images/partial-fountain.png" alt="Partial Fountain">' : ''}
-                ${element.locker_room === "allowed" ? '<img class="locker" src="/assets/images/allowed-lockerroom.png" alt="Locker Room Allowed">' : ''}
-               </div>
-            </li>
-            `
-
+                <li class="gyms">
+                    <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
+                    <h3>${element.title}</h3>
+                    <h2>${element.content}</h2>
+                    <div class="requirements">
+                        ${maskImage ? `<img class="mask" src="${maskImage}" alt="Mask Required">` : ''}
+                        ${towelImage ? `<img class="towel" src="${towelImage}" alt="Towel Required">` : ''}
+                        ${fountainImage ? `<img class="fountain" src="${fountainImage}" alt="Partial Fountain">` : ''}
+                        ${lockerImage ? `<img class="locker" src="${lockerImage}" alt="Locker Room Allowed">` : ''}
+                    </div>
+                </li>
+                `;
             });
-        })
-})
-
-
-
+        });
+});
