@@ -8,13 +8,10 @@ searchgyms.addEventListener('click', (event) => {
             "Content-Type": "application/json"
         }
     }).then(response => response.json())
-        .then(data => {
-            
+        .then(data => { 
           const result = document.querySelector('.result')
-
-          data.locations.forEach((locations) => {
-          result.innerText = `Resultados encontrados: ${locations.length}`
+          result.innerText = `Resultados encontrados: ${data.length}`
         });
 })
-})
+
 
