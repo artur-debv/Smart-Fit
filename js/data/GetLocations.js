@@ -24,6 +24,8 @@ searchgyms.addEventListener('click', (event) => {
             `
             console.log(box)
 
+            result.appendChild(box)
+
         });
 })
 })
