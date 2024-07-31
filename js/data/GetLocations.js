@@ -22,6 +22,7 @@ searchgyms.addEventListener('click', (event) => {
                 <p>${element.fountain}</p>
                 <p>${element.lockerroom}</p>
             `
+            console.log(box)
 
         });
 })
