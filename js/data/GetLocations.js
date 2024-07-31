@@ -1,52 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const searchgyms = document.querySelector(".find");
-    const showClosedCheckbox = document.querySelector("#showClosed");
+const searchgyms = document.querySelector(".find");
 
-    searchgyms.addEventListener('click', (event) => {
-        event.preventDefault();
-        fetch("https://test-frontend-developer.s3.amazonaws.com/data/locations.json", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(response => response.json())
-            .then(data => {
-                const result = document.querySelector('.result');
-                const cards = document.querySelector('.cards');
-               
-                
-                result.innerText = `Resultados encontrados: ${data.locations.length}`;
-                cards.innerHTML = "";
+searchgyms.addEventListener('click', (event) => {
+    event.preventDefault();
+    fetch("https://test-frontend-developer.s3.amazonaws.com/data/locations.json", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(response => response.json())
+        .then(data => {
+            const result = document.querySelector('.result');
+            const cards = document.querySelector('.cards');
+            result.innerText = `Resultados encontrados: ${data.locations.length}`;
+            cards.innerHTML = "";
 
-                data.locations.forEach(element => {
-                  
+            data.locations.forEach(element => {
+                // Definindo as imagens com base nas propriedades
+                const maskImage = element.mask === "required" ? '/assets/images/required-mask.png' :
+                                  element.mask === "recommended" ? '/assets/images/recommended-mask.png' : '';
+                const towelImage = element.towel === "required" ? '/assets/images/required-towel.png' : '';
+                const fountainImage = element.fountain === "partial" ? '/assets/images/partial-fountain.png' : '';
+                const lockerImage = element.locker_room === "allowed" ? '/assets/images/allowed-lockerroom.png' : '';
 
-                    // Definindo as URLs com base nas propriedades
-                    const maskImage = imageMap.mask[element.mask] || '';
-                    const towelImage = imageMap.towel[element.towel] || '';
-                    const fountainImage = imageMap.fountain[element.fountain] || '';
-                    const lockerImage = imageMap.locker_room[element.locker_room] || '';
-
-                    // Gerando o HTML para cada academia
-                    cards.innerHTML += `
-                    <li class="gyms">
-                        <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
-                        <h3>${element.title}</h3>
-                        <h2>${element.content}</h2>
-                        <div class="requirements">
-                            ${maskImage ? `<img class="icon mask" src="${maskImage}" alt="Mask">` : ''}
-                            ${towelImage ? `<img class="icon towel" src="${towelImage}" alt="Towel">` : ''}
-                            ${fountainImage ? `<img class="icon fountain" src="${fountainImage}" alt="Fountain">` : ''}
-                            ${lockerImage ? `<img class="icon locker" src="${lockerImage}" alt="Locker">` : ''}
-                        </div>
-                    </li>
-                    `;
-                });
+                // Gerando o HTML para cada academia
+                cards.innerHTML += `
+                <li class="gyms">
+                    <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
+                    <h3>${element.title}</h3>
+                    <h2>${element.content}</h2>
+                    <div class="requirements">
+                        ${maskImage ? `<img class="mask" src="${maskImage}" alt="Máscara Requerida">` : ''}
+                        ${towelImage ? `<img class="towel" src="${towelImage}" alt="Toalha Requerida">` : ''}
+                        ${fountainImage ? `<img class="fountain" src="${fountainImage}" alt="Fonte Parcial">` : ''}
+                        ${lockerImage ? `<img class="locker" src="${lockerImage}" alt="Armário Permitido">` : ''}
+                    </div>
+                </li>
+                `;
             });
-    });
-
-    // Atualiza a lista de academias quando o checkbox é alterado
-    showClosedCheckbox.addEventListener('change', () => {
-        searchgyms.click(); // Dispara o evento de clique no botão para atualizar a lista
-    });
+        });
 });
