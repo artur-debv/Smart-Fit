@@ -15,7 +15,7 @@ searchgyms.addEventListener('click', (event) => {
           data.locations.forEach(element => {
             const box = document.createElement('div')
             box.classList.add('box')
-            box.innerHTML = `
+            box.innerText = `
                 <h3>${element.content}</h3>
                 <p>${element.mask}</p>
                 <p>${element.towel}</p>
