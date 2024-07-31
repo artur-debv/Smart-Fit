@@ -21,10 +21,12 @@ searchgyms.addEventListener('click', (event) => {
                 <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
                 <h3>${element.title}</h3>
                 <h2>${element.content}</h2>
-                <img src="${element.mask}" alt="">
-                <img src="${element.towel}" alt="">
-                <img src="${element.fountain}" alt="">
-                <img src="${element.locker_room}" alt="">
+                <div class="requirements">
+                    <img class="mask" src="/assets/images/required-mask.png" alt="">
+                    <img class="towel" src="/assets/images/required-towel.png" alt="">
+                    <img class="fountain" src="/assets/images/partial-fountain.png" alt="">
+                    <img class="locker" src="/assets/images/allowed-lockerroom.png" alt="">
+                </div>
             </li>
             `
 
