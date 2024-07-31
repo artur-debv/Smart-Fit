@@ -34,9 +34,6 @@ searchgyms.addEventListener('click', (event) => {
                         ${fountainImage ? `<img class="fountain" src="${fountainImage}" alt="Fonte Parcial">` : ''}
                         ${lockerImage ? `<img class="locker" src="${lockerImage}" alt="Armário Permitido">` : ''}
                     </div>
-                    <div class="hours">
-                       <li>${element.schedules.weekdays}</li>
-                    </div>
                 </li>
                 `;
             });
