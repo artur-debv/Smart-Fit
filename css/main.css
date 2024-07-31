@@ -417,4 +417,12 @@ h3 {
   color: #333333;
   font-size: 24px;
   font-weight: bold;
+}
+
+span {
+  color: red;
+}
+
+span.opened {
+  color: green;
 }/*# sourceMappingURL=main.css.map */
