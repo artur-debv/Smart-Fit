@@ -419,12 +419,6 @@ h3 {
   font-weight: bold;
 }
 
-.status-aberto {
+.status {
   color: green;
-  font-weight: bold;
-}
-
-.status-fechado {
-  color: red;
-  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

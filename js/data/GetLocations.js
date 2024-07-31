@@ -18,7 +18,7 @@ searchgyms.addEventListener('click', (event) => {
             cards.innerHTML += `
 
             <li class="gyms">
-                <span class="status">${element.opened ? 'status-aberto' : 'status-fechado'}</span>
+                <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
                 <h3>${element.title}</h3>
                 <h2>${element.content}</h2>
                 <p>${element.mask}</p>
