@@ -18,6 +18,8 @@ searchgyms.addEventListener('click', (event) => {
             cards.innerHTML += `
 
             <li class="gyms">
+                <span>${element.opened}</span>
+                <h3>${element.title}</h3>
                 <h2>${element.content}</h2>
                 <p>${element.mask}</p>
                 <p>${element.towel}</p>
