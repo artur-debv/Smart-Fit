@@ -422,4 +422,11 @@ h3 {
 .status {
   color: #2FC022;
   font-weight: 700;
+}
+
+.requirements {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 24px;
 }/*# sourceMappingURL=main.css.map */
