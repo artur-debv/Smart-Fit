@@ -8,28 +8,28 @@ searchgyms.addEventListener('click', (event) => {
             "Content-Type": "application/json"
         }
     }).then(response => response.json())
-        .then(data => { 
-          const result = document.querySelector('.result')
-          const cards = document.querySelector('.cards')
-          result.innerText = `Resultados encontrados: ${data.locations.length}`
-          cards.innerHTML = "";
+        .then(data => {
+            const result = document.querySelector('.result')
+            const cards = document.querySelector('.cards')
+            result.innerText = `Resultados encontrados: ${data.locations.length}`
+            cards.innerHTML = "";
 
-          data.locations.forEach(element => {
-            cards.innerHTML += `
+            data.locations.forEach(element => {
+                cards.innerHTML += `
 
             <li class="gyms">
                 <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
                 <h3>${element.title}</h3>
                 <h2>${element.content}</h2>
-                <p>${element.mask}</p>
-                <p>${element.towel}</p>
-                <p>${element.fountain}</p>
-                <p>${element.locker_room}</p>
+                <img src="${element.mask}" alt="">
+                <img src="${element.towel}" alt="">
+                <img src="${element.fountain}" alt="">
+                <img src="${element.locker_room}" alt="">
             </li>
             `
 
-        });
-})
+            });
+        })
 })
 
 
