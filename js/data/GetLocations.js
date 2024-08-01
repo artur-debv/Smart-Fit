@@ -13,11 +13,9 @@ searchgyms.addEventListener('click', (event) => {
             const cards = document.querySelector('.cards');
             const Closed = document.querySelector('#closed');
 
-            Closed.forEach((event) => {
-                event.addEventListener('change', (event) => {
-                    console.log(`Você selecionou: ${event.target.value}`)
-                })
-            })
+            if (Closed.checked) {
+                data.locations = data.locations.filter(element => element.opened === false);
+            }
           
 
             result.innerText = `Resultados encontrados: ${data.locations.length}`;
