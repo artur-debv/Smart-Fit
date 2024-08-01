@@ -16,7 +16,7 @@ searchgyms.addEventListener('click', (event) => {
 
 
             if (closed.checked) {
-                data.locations = data.locations.filter(element => element.opened = false);
+                data.locations = data.locations.filter(element => element.opened === false);
             }
 
 
