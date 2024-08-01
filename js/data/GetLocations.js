@@ -11,24 +11,10 @@ searchgyms.addEventListener('click', (event) => {
         .then(data => {
             const result = document.querySelector('.result');
             const cards = document.querySelector('.cards');
-            const options = document.querySelectorAll('input[type="radio"]');
-
-            // Obtém o valor do input radio selecionado
-            const selectedOption = document.querySelector('input[name="closed"]:checked').value;
-            
-            // Filtrando as academias com base na seleção do radio
-            const filteredLocations = data.locations.filter(element => {
-                if (selectedOption === 'all') {
-                    return true;
-                } else if (selectedOption === 'closed') {
-                    return !element.opened;
-                }
-            });
-
-            //result.innerText = `Resultados encontrados: ${filteredLocations.length}`;
+            result.innerText = `Resultados encontrados: ${data.locations.length}`;
             cards.innerHTML = "";
 
-            filteredLocations.forEach(element => {
+            data.locations.forEach(element => {
                 // Definindo as imagens com base nas propriedades
                 const maskImage = element.mask === "required" ? '/assets/images/required-mask.png' :
                                   element.mask === "recommended" ? '/assets/images/recommended-mask.png' : '';
