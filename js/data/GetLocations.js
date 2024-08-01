@@ -12,6 +12,20 @@ searchgyms.addEventListener('click', (event) => {
             const result = document.querySelector('.result');
             const cards = document.querySelector('.cards');
             result.innerText = `Resultados encontrados: ${data.locations.length}`;
+            const closed = document.querySelector('#closed');
+
+          closed.addEventListener('change', (event) => {
+                if (event.target.checked) {
+                    data.locations = data.locations.filter(element => !element.opened);
+                }else{
+                    data.locations = data.locations
+                }
+            })
+
+            
+
+
+
             cards.innerHTML = "";
 
             data.locations.forEach(element => {
