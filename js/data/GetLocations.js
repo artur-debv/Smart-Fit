@@ -11,6 +11,15 @@ searchgyms.addEventListener('click', (event) => {
         .then(data => {
             const result = document.querySelector('.result');
             const cards = document.querySelector('.cards');
+         
+            const Option = document.querySelectorAll('input[type="radio"]');
+
+            Option.forEach((event) => {
+                event.addEventListener('change', (event) => {
+                    console.log(`Você selecionou: ${event.target.value}`)
+                })
+            })
+
             result.innerText = `Resultados encontrados: ${data.locations.length}`;
             cards.innerHTML = "";
 
