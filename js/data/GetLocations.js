@@ -11,14 +11,14 @@ searchgyms.addEventListener('click', (event) => {
         .then(data => {
             const result = document.querySelector('.result');
             const cards = document.querySelector('.cards');
-         
-            const Option = document.querySelectorAll('input[type="radio"]');
+            const Closed = document.querySelector('#closed');
 
-            Option.forEach((event) => {
+            Closed.forEach((event) => {
                 event.addEventListener('change', (event) => {
                     console.log(`Você selecionou: ${event.target.value}`)
                 })
             })
+          
 
             result.innerText = `Resultados encontrados: ${data.locations.length}`;
             cards.innerHTML = "";
