@@ -14,7 +14,7 @@ searchgyms.addEventListener('click', (event) => {
             const options = document.querySelectorAll('input[type="radio"]');
 
             // Obtém o valor do input radio selecionado
-            const selectedOption = document.querySelector('input[name="status"]:checked').value;
+            const selectedOption = document.querySelector('input[name="closed"]:checked').value;
             
             // Filtrando as academias com base na seleção do radio
             const filteredLocations = data.locations.filter(element => {
