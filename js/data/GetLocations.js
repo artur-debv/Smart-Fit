@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch("https://test-frontend-developer.s3.amazonaws.com/data/locations.json");
             const data = await response.json();
             allLocations = data.locations;
+            console.log('Todos os locais:', allLocations); // Log dos dados recebidos da API
             displayLocations(allLocations);
         } catch (error) {
             console.error('Erro ao buscar locais:', error);
@@ -56,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (Closed.checked) {
             filteredLocations = allLocations.filter(element => element.opened === false);
+            console.log('Locais fechados:', filteredLocations); // Log dos locais filtrados
+        } else {
+            console.log('Todos os locais:', allLocations); // Log dos locais sem filtrar
         }
 
         displayLocations(filteredLocations);
