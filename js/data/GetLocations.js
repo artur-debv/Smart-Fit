@@ -14,17 +14,12 @@ searchgyms.addEventListener('click', (event) => {
             result.innerText = `Resultados encontrados: ${data.locations.length}`;
             const closed = document.querySelector('#closed');
 
-            
-            closed.addEventListener('change', (event) => {
-                if(event.target.checked) {
-                    data.locations = data.locations.filter((element) => element.opened === false);
-                }
-            })
+
+            if (closed.checked) {
+                data.locations = data.locations.filter(element => element.opened);
+            }
 
             
-
-
-
             cards.innerHTML = "";
 
             data.locations.forEach(element => {
