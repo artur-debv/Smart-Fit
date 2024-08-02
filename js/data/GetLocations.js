@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchgyms = document.querySelector(".find");
-    let allLocations = [];
+    const allLocations = [];
 
     const fetchLocations = async () => {
         try {
