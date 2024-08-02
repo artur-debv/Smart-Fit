@@ -1,56 +1,105 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const searchGymsButton = document.querySelector(".find");
-    const gymApiURL = 'https://test-frontend-developer.s3.amazonaws.com/data/locations.json';
+const gymApiURL = 'https://test-frontend-developer.s3.amazonaws.com/data/locations.json';
 
-    // Função para buscar os dados da API
-    const fetchLocations = async () => {
-        try {
-            const response = await fetch(gymApiURL);
-            const data = await response.json();
-            console.log('Todos os locais:', data.locations); // Log dos dados recebidos da API
-            return data.locations;
-        } catch (error) {
-            console.error('Erro ao buscar locais:', error);
-            return [];
-        }
-    };
+const buttonSearchGyms = document.getElementById('search-btn');
 
-    // Função para exibir o resultado das academias
-    const displayLocations = (locations) => {
-        const result = document.querySelector('.result');
-        const cards = document.querySelector('.cards');
+// chamada para a api
 
-        result.innerText = `Resultados encontrados: ${locations.length}`;
-        cards.innerHTML = "";
+const fetchGymData = async () => {
+    const responseAPI = await fetch(gymApiURL);
+    const data = await responseAPI.json();
 
-        locations.forEach(element => {
-          
-        });
-    };
+    return data.locations;
+}
 
-    // Função para atualizar as academias exibidas
-    const updateDisplayedLocations = async () => {
-        const closedCheckbox = document.querySelector('#closed');
-        const allLocations = await fetchLocations();
-        let filteredLocations = allLocations;
 
-        if (closedCheckbox.checked) {
-            filteredLocations = allLocations.filter(location => !location.opened); // Filtra academias fechadas
-        } else {
-            filteredLocations = allLocations.filter(location => location.opened); // Filtra academias abertas
-        }
+// mostra na tela o resultado de academias encontradas
 
-        displayLocations(filteredLocations);
-    };
+function displayGymsCount(gyms) {
+    const gymsCountElement = document.querySelector('.academy-closed span');
 
-    // Adiciona eventos aos elementos
-    searchGymsButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        updateDisplayedLocations();
+    gymsCountElement.textContent = gyms.length
+}
+
+
+// filtra por academias que estão abertas
+
+function filterOpenGyms(gyms) {
+    return gyms.filter(gym => gym.opened);
+}
+
+
+
+// mostra academias abertas assim que entramos na aplicação 
+
+const showOpenGyms = async () => {
+    const allGyms = await fetchGymData();
+    const openGyms = filterOpenGyms(allGyms);
+
+    displayGymsCount(openGyms);
+};
+document.addEventListener('DOMContentLoaded', showOpenGyms);
+
+
+
+// verifica o checkbox e faz a busca com base no mesmo
+
+async function searchForOpenOrClosedGyms()  {
+    const allGyms = await fetchGymData();
+    const openGyms = filterOpenGyms(allGyms);
+    
+    const checkboxClosedUnited = document.getElementById('closed-united');
+
+    if (checkboxClosedUnited.checked) {
+        displayGymsCount(allGyms);
+        showGymCards(allGyms) 
+    } else {
+        displayGymsCount(openGyms);
+        showGymCards(openGyms) 
+    }
+}
+
+// percorre o array passado como argumento e mostra os cards com as informações do mesmo
+
+function showGymCards(gyms) {
+    const gymCardContainer = document.querySelector('.container-gym-cards');
+    gymCardContainer.innerHTML = '';
+
+    const fragment = document.createDocumentFragment();
+
+    gyms.forEach(gym => {
+        const gymCard = document.createElement('div');
+        gymCard.className = 'gym-card';
+
+        gymCard.innerHTML = `
+           
+        `;
+
+        fragment.appendChild(gymCard);
     });
 
-    document.querySelector('#closed').addEventListener('change', updateDisplayedLocations);
+    gymCardContainer.appendChild(fragment);
+}
 
-    // Carregar unidades ao inicializar
-    updateDisplayedLocations();
-});
+
+
+const searchGyms = async () => {
+    
+
+    searchForOpenOrClosedGyms()
+
+   
+
+    
+
+   
+};
+
+
+
+
+
+
+
+
+
+buttonSearchGyms.addEventListener('click', searchGyms);
