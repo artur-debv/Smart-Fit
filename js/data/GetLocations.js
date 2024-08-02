@@ -22,10 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.innerHTML = "";
 
         locations.forEach(element => {
-            const card = document.createElement('div');
-            card.classList.add('card');
-            card.innerText = element.name; // Display gym name, adjust as needed
-            cards.appendChild(card);
+           
         });
     };
 
