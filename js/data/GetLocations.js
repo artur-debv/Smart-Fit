@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let filteredLocations = allLocations;
 
         if (Closed.checked) {
-            filteredLocations = allLocations.filter(element => element.opened === false);
+            filteredLocations = allLocations.filter(element => element.opened === true);
             console.log('Locais fechados:', filteredLocations); // Log dos locais filtrados
         } else {
             console.log('Todos os locais:', allLocations); // Log dos locais sem filtrar
