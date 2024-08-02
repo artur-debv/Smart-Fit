@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchgyms = document.querySelector(".find");
-    const allLocations = [];
+    const gymApiURL = 'https://test-frontend-developer.s3.amazonaws.com/data/locations.json';
 
     const fetchLocations = async () => {
         try {
-            const response = await fetch("https://test-frontend-developer.s3.amazonaws.com/data/locations.json");
+            const response = await fetch(gymApiURL);
             const data = await response.json();
-            allLocations = data.locations;
-            console.log('Todos os locais:', allLocations); // Log dos dados recebidos da API
-            updateDisplayedLocations(); // Exibir todas as academias abertas inicialmente
+            console.log('Todos os locais:', data.locations); // Log dos dados recebidos da API
+            return data.locations;
         } catch (error) {
             console.error('Erro ao buscar locais:', error);
+            return [];
         }
     };
 
@@ -22,13 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.innerHTML = "";
 
         locations.forEach(element => {
-           
+       
         });
     };
 
-    const updateDisplayedLocations = () => {
+    const updateDisplayedLocations = async () => {
         const closed = document.querySelector('#closed');
-        const filteredLocations = [];
+        const allLocations = await fetchLocations();
+        let filteredLocations = allLocations;
 
         if (closed.checked) {
             filteredLocations = allLocations.filter(element => !element.opened);
@@ -43,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchgyms.addEventListener('click', (event) => {
         event.preventDefault();
-        fetchLocations();
+        updateDisplayedLocations();
     });
 
     document.querySelector('#closed').addEventListener('change', updateDisplayedLocations);
 
     // Carregar unidades ao inicializar
-    fetchLocations();
+    updateDisplayedLocations();
 });
