@@ -18,23 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const result = document.querySelector('.result');
         const cards = document.querySelector('.cards');
 
-        result.innerText = `Resultados encontrados: ${locations.length}`;
+        result.innerText = Resultados encontrados: ${locations.length};
         cards.innerHTML = "";
 
         locations.forEach(element => {
-           
+          
         });
     };
 
     const updateDisplayedLocations = () => {
         const closed = document.querySelector('#closed');
-        const filteredLocations = [];
+        const filteredLocations = allLocations;
 
         if (closed.checked) {
-            filteredLocations = allLocations.filter(element => !element.opened);
+            filteredLocations = allLocations.filter(element => element.opened === false);
             console.log('Locais fechados:', filteredLocations); // Log dos locais filtrados
         } else {
-            filteredLocations = allLocations.filter(element => element.opened);
+            filteredLocations = allLocations.filter(element => element.opened === true);
             console.log('Locais abertos:', filteredLocations); // Log dos locais abertos
         }
 
