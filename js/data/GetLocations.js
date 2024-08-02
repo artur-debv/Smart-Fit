@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateDisplayedLocations = () => {
         const closed = document.querySelector('#closed');
-        let filteredLocations = allLocations;
+        const filteredLocations = allLocations;
 
         if (closed.checked) {
             filteredLocations = allLocations.filter(element => element.opened === false);
