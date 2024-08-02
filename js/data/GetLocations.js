@@ -22,27 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.innerHTML = "";
 
         locations.forEach(element => {
-            // Definindo as imagens com base nas propriedades
-            const maskImage = element.mask === "required" ? '/assets/images/required-mask.png' :
-                              element.mask === "recommended" ? '/assets/images/recommended-mask.png' : '';
-            const towelImage = element.towel === "required" ? '/assets/images/required-towel.png' : '';
-            const fountainImage = element.fountain === "partial" ? '/assets/images/partial-fountain.png' : '';
-            const lockerImage = element.locker_room === "allowed" ? '/assets/images/allowed-lockerroom.png' : '';
-
-            // Gerando o HTML para cada academia
-            cards.innerHTML += `
-            <li class="gyms">
-                <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
-                <h3>${element.title}</h3>
-                <h2>${element.content}</h2>
-                <div class="requirements">
-                    ${maskImage ? `<img class="mask" src="${maskImage}" alt="Máscara Requerida">` : ''}
-                    ${towelImage ? `<img class="towel" src="${towelImage}" alt="Toalha Requerida">` : ''}
-                    ${fountainImage ? `<img class="fountain" src="${fountainImage}" alt="Fonte Parcial">` : ''}
-                    ${lockerImage ? `<img class="locker" src="${lockerImage}" alt="Armário Permitido">` : ''}
-                </div>
-            </li>
-            `;
+          
         });
     };
 
