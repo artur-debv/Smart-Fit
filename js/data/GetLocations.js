@@ -24,25 +24,61 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.innerHTML = "";
 
         locations.forEach(element => {
-          
+            const gymCard = document.createElement('div');
+            gymCard.className = 'gym-card';
+
+            gymCard.innerHTML = `
+                <div class="card-header">
+                    <span class="card-status ${element.opened ? 'status-open' : 'status-close'}">
+                        ${element.opened ? 'Aberto' : 'Fechado'}
+                    </span>
+                    <h3 class="card-title">${element.title}</h3>
+                    <p class="card-address">
+                        ${element.content ? element.content.replace(/<\/?[^>]+(>|$)/g, "") : element.street}
+                    </p>
+                </div>
+
+                <div class="card-container-icons">
+                    <img src="assets/images/required-mask.png" alt="icon" class="card-icon">
+                    <img src="assets/images/required-towel.png" alt="icon" class="card-icon">
+                    <img src="assets/images/partial-fountain.png" alt="icon" class="card-icon">
+                    <img src="assets/images/allowed-lockerroom.png" alt="icon" class="card-icon">
+                </div>
+                
+                <div class="card-schedules">
+                    <p class="card-schedules-container">
+                        <span class="card-day">Seg. à Sex.</span>
+                        <span class="card-hour">06h às 22h</span>
+                    </p>
+
+                    <p class="card-schedules-container">
+                        <span class="card-day">Sáb</span>
+                        <span class="card-hour">Fechada</span>
+                    </p>
+
+                    <p class="card-schedules-container">
+                        <span class="card-day">Dom.</span>
+                        <span class="card-hour">Fechada</span>
+                    </p>
+                </div>
+            `;
+
+            cards.appendChild(gymCard);
         });
     };
 
     // Função para atualizar as academias exibidas
     const updateDisplayedLocations = async () => {
         const closedCheckbox = document.querySelector('#closed');
-        let filteredLocations = allLocations;
-    
+        const allLocations = await fetchLocations();
+        let filteredLocations;
+
         if (closedCheckbox.checked) {
-            // Filtra academias fechadas
-            filteredLocations = allLocations.filter(location => !location.opened);
-            console.log('Locais fechados:', filteredLocations.length); // Log dos locais filtrados
+            filteredLocations = allLocations.filter(location => !location.opened); // Filtra academias fechadas
         } else {
-            // Exibe todas as academias
-            filteredLocations = allLocations;
-            console.log('Todos os locais exibidos:', filteredLocations.length); // Log dos locais exibidos
+            filteredLocations = allLocations.filter(location => location.opened); // Filtra academias abertas
         }
-    
+
         displayLocations(filteredLocations);
     };
 
