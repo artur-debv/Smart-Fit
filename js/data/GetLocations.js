@@ -35,11 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let filteredLocations = allLocations;
 
         if (closedCheckbox.checked) {
-            filteredLocations = allLocations.filter(element => element.opened === false);
-            console.log('Locais fechados:', filteredLocations); // Log dos locais filtrados
+            filteredLocations = allLocations.filter(location => !location.opened); // Filtra academias fechadas
         } else {
-            filteredLocations = allLocations.filter(element => element.opened);
-            console.log('Locais abertos:', filteredLocations); // Log dos locais abertos
+            filteredLocations = allLocations.filter(location => location.opened); // Filtra academias abertas
         }
 
         displayLocations(filteredLocations);
