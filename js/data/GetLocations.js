@@ -31,15 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para atualizar as academias exibidas
     const updateDisplayedLocations = async () => {
         const closedCheckbox = document.querySelector('#closed');
-        const allLocations = await fetchLocations();
         let filteredLocations = allLocations;
-
+    
         if (closedCheckbox.checked) {
-            filteredLocations = allLocations.filter(location => !location.opened); // Filtra academias fechadas
+            // Filtra academias fechadas
+            filteredLocations = allLocations.filter(location => !location.opened);
+            console.log('Locais fechados:', filteredLocations.length); // Log dos locais filtrados
         } else {
-            filteredLocations = allLocations.filter(location => location.opened); // Filtra academias abertas
+            // Exibe todas as academias
+            filteredLocations = allLocations;
+            console.log('Todos os locais exibidos:', filteredLocations.length); // Log dos locais exibidos
         }
-
+    
         displayLocations(filteredLocations);
     };
 
