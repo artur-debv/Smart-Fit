@@ -1,6 +1,6 @@
 
     const searchgyms = document.querySelector(".find");
-    let allLocations = [];
+    const allLocations = [];
 
     const fetchLocations = async () => {
         try {
@@ -53,7 +53,7 @@
 
     document.querySelector('#closed').addEventListener('change', () => {
         const Closed = document.querySelector('#closed');
-        let filteredLocations = allLocations;
+        const filteredLocations = allLocations;
 
         if (Closed.checked) {
             filteredLocations = allLocations.filter(element => element.opened === false);
