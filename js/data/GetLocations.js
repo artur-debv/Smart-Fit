@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchgyms = document.querySelector(".find");
-
+    let allLocations = [];
 
     const fetchLocations = async () => {
         try {
@@ -22,19 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.innerHTML = "";
 
         locations.forEach(element => {
-          
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerText = element.name; // Display gym name, adjust as needed
+            cards.appendChild(card);
         });
     };
 
     const updateDisplayedLocations = () => {
         const closed = document.querySelector('#closed');
-        const filteredLocations = allLocations;
+        const filteredLocations = [];
 
         if (closed.checked) {
-            filteredLocations = allLocations.filter(element => element.opened === false);
+            filteredLocations = allLocations.filter(element => !element.opened);
             console.log('Locais fechados:', filteredLocations); // Log dos locais filtrados
         } else {
-            filteredLocations = allLocations.filter(element => element.opened === true);
+            filteredLocations = allLocations.filter(element => element.opened);
             console.log('Locais abertos:', filteredLocations); // Log dos locais abertos
         }
 
