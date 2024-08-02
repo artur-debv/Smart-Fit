@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+
     const searchgyms = document.querySelector(".find");
     let allLocations = [];
 
@@ -67,4 +67,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Carregar unidades ao inicializar
     fetchLocations();
-});
+
