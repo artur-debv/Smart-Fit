@@ -82,6 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
         displayLocations(filteredLocations);
     };
 
+    // Função para exibir todas as academias abertas inicialmente
+    const showOpenGyms = async () => {
+        const allLocations = await fetchLocations();
+        const openGyms = allLocations.filter(location => location.opened); // Filtra academias abertas
+        displayLocations(openGyms);
+    };
+
     // Adiciona eventos aos elementos
     searchGymsButton.addEventListener('click', (event) => {
         event.preventDefault();
@@ -90,6 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#closed').addEventListener('change', updateDisplayedLocations);
 
-    // Carregar unidades ao inicializar
-    updateDisplayedLocations();
+    // Carregar academias abertas ao inicializar
+    showOpenGyms();
 });
