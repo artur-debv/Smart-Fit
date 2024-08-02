@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchgyms = document.querySelector(".find");
-    const closedCheckbox = document.querySelector('#closed');
     let allLocations = [];
 
     const fetchLocations = async () => {
@@ -8,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch("https://test-frontend-developer.s3.amazonaws.com/data/locations.json");
             const data = await response.json();
             allLocations = data.locations;
-            console.log('Todos os locais:', allLocations);
-            updateDisplayedLocations();
+            console.log('Todos os locais:', allLocations); // Log dos dados recebidos da API
+            updateDisplayedLocations(); // Exibir todas as academias abertas inicialmente
         } catch (error) {
             console.error('Erro ao buscar locais:', error);
         }
@@ -23,34 +22,42 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.innerHTML = "";
 
         locations.forEach(element => {
+            // Definindo as imagens com base nas propriedades
             const maskImage = element.mask === "required" ? '/assets/images/required-mask.png' :
                               element.mask === "recommended" ? '/assets/images/recommended-mask.png' : '';
             const towelImage = element.towel === "required" ? '/assets/images/required-towel.png' : '';
             const fountainImage = element.fountain === "partial" ? '/assets/images/partial-fountain.png' : '';
             const lockerImage = element.locker_room === "allowed" ? '/assets/images/allowed-lockerroom.png' : '';
 
+            // Gerando o HTML para cada academia
             cards.innerHTML += `
-                <li class="gyms">
-                    <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
-                    <h3>${element.title}</h3>
-                    <h2>${element.content}</h2>
-                    <div class="requirements">
-                        ${maskImage ? `<img class="mask" src="${maskImage}" alt="Máscara Requerida">` : ''}
-                        ${towelImage ? `<img class="towel" src="${towelImage}" alt="Toalha Requerida">` : ''}
-                        ${fountainImage ? `<img class="fountain" src="${fountainImage}" alt="Fonte Parcial">` : ''}
-                        ${lockerImage ? `<img class="locker" src="${lockerImage}" alt="Armário Permitido">` : ''}
-                    </div>
-                </li>
+            <li class="gyms">
+                <span class="status">${element.opened ? 'aberto' : 'fechado'}</span>
+                <h3>${element.title}</h3>
+                <h2>${element.content}</h2>
+                <div class="requirements">
+                    ${maskImage ? `<img class="mask" src="${maskImage}" alt="Máscara Requerida">` : ''}
+                    ${towelImage ? `<img class="towel" src="${towelImage}" alt="Toalha Requerida">` : ''}
+                    ${fountainImage ? `<img class="fountain" src="${fountainImage}" alt="Fonte Parcial">` : ''}
+                    ${lockerImage ? `<img class="locker" src="${lockerImage}" alt="Armário Permitido">` : ''}
+                </div>
+            </li>
             `;
         });
     };
 
     const updateDisplayedLocations = () => {
-        const filteredLocations = closedCheckbox.checked ? 
-            allLocations.filter(location => !location.opened) :
-            allLocations.filter(location => location.opened);
+        const closed = document.querySelector('#closed');
+        let filteredLocations = allLocations;
 
-        console.log('Locais filtrados:', filteredLocations);
+        if (closed.checked) {
+            filteredLocations = allLocations.filter(element => element.opened === false);
+            console.log('Locais fechados:', filteredLocations); // Log dos locais filtrados
+        } else {
+            filteredLocations = allLocations.filter(element => element.opened === true);
+            console.log('Locais abertos:', filteredLocations); // Log dos locais abertos
+        }
+
         displayLocations(filteredLocations);
     };
 
@@ -59,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchLocations();
     });
 
-    closedCheckbox.addEventListener('change', updateDisplayedLocations);
+    document.querySelector('#closed').addEventListener('change', updateDisplayedLocations);
 
     // Carregar unidades ao inicializar
     fetchLocations();
