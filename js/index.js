@@ -26,10 +26,24 @@ const openAcademies = async () => {
 document.addEventListener("DOMContentLoaded", openAcademies);
 
 function academiesCards(academies) {
-    const cards = document.querySelector(".cards");
-    cards.innerHTML = ""; // Clear previous cards
     academies.forEach(academy => {
-     
+       
+       const cards = document.querySelector(".cards");
+       
+       cards.innerHTML += `
+            <div class="gyms">
+                   <span class="card-status ${academy.opened ? 'status-open' : 'status-close'}">
+                    ${academy.opened ? 'Aberto' : 'Fechado'}
+                </span>
+                <h3 class="card-title">${academy.title}</h3>
+                <p class="card-address">
+                    ${academy.content ? academy.content.replace(/<\/?[^>]+(>|$)/g, "") : academy.street}
+                </p>
+            </div>
+        `
+        
+      
+        
     });
 }
 
