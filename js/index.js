@@ -57,7 +57,7 @@ const Searchs = async (event) => {
 }
 
 const SearchAcademys = async () => {
-    Search()
+    Searchs()
 }
 
 Search.addEventListener("click", SearchAcademys)
