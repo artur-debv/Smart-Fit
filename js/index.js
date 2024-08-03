@@ -44,7 +44,7 @@ const Searchs = async (event) => {
     const academys = await FetchApi();
     const academysFilter = filterAcademy(academys)
 
-    const Closed = document.getElementById("#closed")
+    const Closed = document.getElementById("closed")
 
     if(Closed.checked){
         DiplayCount(academys)
