@@ -29,18 +29,7 @@ function academiesCards(academies) {
     const cards = document.querySelector(".cards");
     cards.innerHTML = ""; // Clear previous cards
     academies.forEach(academy => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `
-            <div class="card__image">
-                <img src="${academy.image}" alt="${academy.name}">
-            </div>
-            <div class="card__content">
-                <h3>${academy.name}</h3>
-                <p>${academy.description}</p>
-            </div>
-        `;
-        cards.appendChild(card);
+     
     });
 }
 
