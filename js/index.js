@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", openAcademies);
 
 function academiesCards(academies) {
     academies.forEach(academy => {
-       
-       const cards = document.querySelector(".cards");
-       
-       cards.innerHTML += `
+
+        const cards = document.querySelector(".cards");
+
+        cards.innerHTML += `
             <div class="gyms">
                    <span class="card-status ${academy.opened ? 'status-open' : 'status-close'}">
                     ${academy.opened ? 'Aberto' : 'Fechado'}
@@ -39,11 +39,17 @@ function academiesCards(academies) {
                 <p class="card-address">
                     ${academy.content ? academy.content.replace(/<\/?[^>]+(>|$)/g, "") : academy.street}
                 </p>
+                <div class="card-image">
+                     <img src="assets/images/required-mask.png" alt="icon" class="card-icon">
+                     <img src="assets/images/required-towel.png" alt="icon" class="card-icon">
+                     <img src="assets/images/partial-fountain.png" alt="icon" class="card-icon">
+                     <img src="assets/images/allowed-lockerroom.png" alt="icon" class="card-icon">
+                </div>
             </div>
         `
-        
-      
-        
+
+
+
     });
 }
 
