@@ -33,11 +33,15 @@ h3{
 }
 
 
-.status{
-    color: #2FC022;
+.status-open{
+    color: green;
     font-weight: 700;
 }
 
+.status-close{
+    color: red;
+    font-weight: 700;
+}
 
 .requirements{
     display: flex;
