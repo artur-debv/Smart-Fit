@@ -39,7 +39,8 @@ function academysCards(academys){
 })
 }
 
-const Searchs = async () => {
+const Searchs = async (event) => {
+    event.preventDefault();
     const academys = await FetchApi();
     const academysFilter = filterAcademy(academys)
 
