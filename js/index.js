@@ -10,6 +10,6 @@ const FetchApi = async () => {
 
 function DiplayCount(academys){
     const count = document.querySelector(".result");
-    count.innerHTML = `Resultados encontrados: ${academys.length}`
+    count.textContent = `Resultados encontrados: ${academys.length}`
 }
 
