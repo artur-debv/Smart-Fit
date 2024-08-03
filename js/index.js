@@ -13,3 +13,6 @@ function DiplayCount(academys){
     count.textContent = `Resultados encontrados: ${academys.length}`
 }
 
+function filterAcademy(academys){
+    return academys.filter(academys => academys.opened)
+}
