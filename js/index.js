@@ -16,3 +16,11 @@ function DiplayCount(academys){
 function filterAcademy(academys){
     return academys.filter(academys => academys.opened)
 }
+
+const OpenAcademys = async () => {
+    const academys = await FetchApi();
+    const academysFilter = filterAcademy(academys)
+
+    DiplayCount(academysFilter)
+}
+document.addEventListener("DOMContentLoaded", OpenAcademys)
