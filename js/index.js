@@ -66,11 +66,10 @@ function academiesCards(academies) {
                 <img src="${iconPaths.fountain[academy.fountain]}" alt="Fountain Icon" class="card-icon">
             </div>
             <div class="Card-Hours">
-                <ul class="card-hours">
+                <ul>
                     ${academy.schedules.map(schedule => `
-                         <li class="card-hour"><stong>${schedule.weekdays}</stong>
-                          <br>
-                         ${schedule.hour}</li>
+                        <li><strong>${schedule.weekdays}</strong></li>
+                        <li>${schedule.hour}</li>
                     `).join('')}
                 </ul>
             </div>
