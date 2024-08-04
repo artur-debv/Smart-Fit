@@ -442,6 +442,10 @@ h3 {
   margin-top: 14px;
 }
 
+.card-image {
+  margin-bottom: 20px;
+}
+
 .mask {
   height: 50px;
 }
