@@ -68,7 +68,9 @@ function academiesCards(academies) {
             <div class="Card-Hours">
                 <ul class="card-hours">
                     ${academy.schedules.map(schedule => `
-                         <li class="card-hour">${schedule.weekdays}: ${schedule.hour}</li>
+                         <li class="card-hour"><stong>${schedule.weekdays}</stong>
+                          <br>
+                         ${schedule.hour}</li>
                     `).join('')}
                 </ul>
             </div>
