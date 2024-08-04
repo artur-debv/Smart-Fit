@@ -14,7 +14,7 @@ searchButtons.addEventListener("click", async (event) => {
     academiesCards(filteredAcademies);
 
     if (filteredAcademies.length === 0) {
-        Status.innerHTML = `
+        Status.textContent = `
             <div class="uk-alert uk-alert-danger" uk-alert>
                 <a class="uk-alert-close" uk-close></a>
                 <div class="uk-alert-description">
