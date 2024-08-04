@@ -1,11 +1,14 @@
-const Button_Search = document.querySelector(".search_button");
+const searchButton = document.querySelector(".search_button");
+const searchInput = document.querySelector(".search_input");
 
-const search = document.querySelector(".search_input");
-
-Button_Search.addEventListener("click", (event) => {
+searchButton.addEventListener("click", async (event) => {
     event.preventDefault();
 
-    const searchValue = search.value;
+    const searchValue = searchInput.value.toLowerCase();
+    const academies = await fetchApi();
+    const academiesFilter = filterAcademy(academies);
+    const filteredAcademies = academiesFilter.filter(academy => academy.title.toLowerCase().includes(searchValue));
 
-    console.log(searchValue);
-})
+    displayCount(filteredAcademies);
+    academiesCards(filteredAcademies);
+});
