@@ -52,29 +52,28 @@ function academiesCards(academies) {
 
     academies.forEach(academy => {
         cards.innerHTML += `
-            <div class="gyms">
-                <span class="card-status ${academy.opened ? 'status-open' : 'status-close'}">
-                    ${academy.opened ? 'Aberto' : 'Fechado'}
-                </span>
-                <h3 class="card-title">${academy.title}</h3>
-                <p class="card-address">
-                    ${academy.content ? academy.content.replace(/<\/?[^>]+(>|$)/g, "") : academy.street}
-                </p>
-                <div class="card-image">
-                    <img src="${iconPaths.mask[academy.mask]}" alt="Mask Icon" class="card-icon">
-                    <img src="${iconPaths.towel[academy.towel]}" alt="Towel Icon" class="card-icon">
-                    <img src="${iconPaths.fountain[academy.fountain]}" alt="Towel Icon" class="card-icon">
-                </div>
-                <div class="Card-Hours">
-                    <ul>
-
-                    <li>${academy.schedules}</li>
-                  
-
-                    <ul>
-                </div>
+        <div class="gyms">
+            <span class="card-status ${academy.opened ? 'status-open' : 'status-close'}">
+                ${academy.opened ? 'Aberto' : 'Fechado'}
+            </span>
+            <h3 class="card-title">${academy.title}</h3>
+            <p class="card-address">
+                ${academy.content ? academy.content.replace(/<\/?[^>]+(>|$)/g, "") : academy.street}
+            </p>
+            <div class="card-image">
+                <img src="${iconPaths.mask[academy.mask]}" alt="Mask Icon" class="card-icon">
+                <img src="${iconPaths.towel[academy.towel]}" alt="Towel Icon" class="card-icon">
+                <img src="${iconPaths.fountain[academy.fountain]}" alt="Fountain Icon" class="card-icon">
             </div>
-        `;
+            <div class="Card-Hours">
+                <ul>
+                    ${academy.schedules.map(schedule => `
+                        <li>${schedule.weekdays}: ${schedule.hour}</li>
+                    `).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
     });
 }
 
