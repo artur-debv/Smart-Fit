@@ -5,3 +5,10 @@
     font-weight: 500;
     font-size: 12px;
 }
+
+.card-hours{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 24px;
+}
