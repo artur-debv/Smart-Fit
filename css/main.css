@@ -456,4 +456,12 @@ h3 {
 
 .locker {
   height: 50px;
+}
+
+.card-hour {
+  display: flex;
+  flex-direction: column;
+  color: #333333;
+  font-weight: 500;
+  font-size: 12px;
 }/*# sourceMappingURL=main.css.map */
