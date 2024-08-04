@@ -63,7 +63,7 @@ function academiesCards(academies) {
                 <div class="card-image">
                     <img src="${iconPaths.mask[academy.mask]}" alt="Mask Icon" class="card-icon">
                     <img src="${iconPaths.towel[academy.towel]}" alt="Towel Icon" class="card-icon">
-                    <img src="${iconPaths.fountain[academy.fountain] || 'assets/images/default-fountain.png'}" alt="Fountain Icon" class="card-icon">
+                    <img src="${iconPaths.fountain[academy.fountain]}" alt="Towel Icon" class="card-icon">
                 </div>
             </div>
         `;
