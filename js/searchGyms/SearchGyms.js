@@ -1,7 +1,7 @@
-const searchButton = document.querySelector(".search_button");
+const searchButtons = document.querySelector(".search_button");
 const searchInput = document.querySelector(".search_input");
 
-searchButton.addEventListener("click", async (event) => {
+searchButtons.addEventListener("click", async (event) => {
     event.preventDefault();
 
     const searchValue = searchInput.value.toLowerCase();
