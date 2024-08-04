@@ -14,8 +14,8 @@ clear.addEventListener("click", () => {
 
 
 Options.forEach((option) => {
-   option.addEventListener("change", () => {
-      console.log(option.target.value);
+   option.addEventListener("change", (event) => {
+    console.log(`Você selecionou: ${event.target.value}`);
    })
 })
 
