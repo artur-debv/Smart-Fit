@@ -65,6 +65,14 @@ function academiesCards(academies) {
                     <img src="${iconPaths.towel[academy.towel]}" alt="Towel Icon" class="card-icon">
                     <img src="${iconPaths.fountain[academy.fountain]}" alt="Towel Icon" class="card-icon">
                 </div>
+                <div class="Card-Hours">
+                    <ul>
+
+                    <li>${academy.schedules.weekdays}</li>
+                     <li>${academy.schedules.hour}</li>
+
+                    <ul>
+                </div>
             </div>
         `;
     });
