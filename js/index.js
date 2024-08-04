@@ -68,8 +68,8 @@ function academiesCards(academies) {
                 <div class="Card-Hours">
                     <ul>
 
-                    <li>${academy.schedules.weekdays}</li>
-                     <li>${academy.schedules.hour}</li>
+                    <li>${academy.schedules}</li>
+                  
 
                     <ul>
                 </div>
