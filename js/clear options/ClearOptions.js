@@ -4,7 +4,8 @@ const clear = document.querySelector(".clean");
 
 const closed = document.getElementById("closed");
 
-clear.addEventListener("click", () => {
+clear.addEventListener("click", (event) => {
+    event.preventDefault();
     Options.forEach((option) => {
         option.checked = false;
     })
