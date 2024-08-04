@@ -40,7 +40,7 @@ const iconPaths = {
         partial: 'assets/images/partial-fountain.png',
         not_allowed: 'assets/images/not-allowed-fountain.png'
     },
-    locker_room: {
+   locker_room: {
         allowed: 'assets/images/allowed-lockerroom.png',
         closed: 'assets/images/closed-lockerroom.png'
     }
