@@ -42,7 +42,7 @@ const iconPaths = {
     },
    locker_room: {
         allowed: 'assets/images/allowed-lockerroom.png',
-        partial: 'assets/images/partial-lockerroom.png',
+       
         closed: 'assets/images/closed-lockerroom.png'
     }
 };
