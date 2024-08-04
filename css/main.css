@@ -256,6 +256,7 @@ footer img {
   padding: 24px;
   gap: 32px;
   background-color: #333333;
+  margin-top: 20px;
 }
 
 .required-mask {
