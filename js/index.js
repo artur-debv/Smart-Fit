@@ -40,10 +40,10 @@ const iconPaths = {
         partial: 'assets/images/partial-fountain.png',
         not_allowed: 'assets/images/not-allowed-fountain.png'
     },
-   /*locker_room: {
+   locker_room: {
         allowed: 'assets/images/allowed-lockerroom.png',
         closed: 'assets/images/closed-lockerroom.png'
-    }*/
+    }
 };
 
 function academiesCards(academies) {
@@ -64,6 +64,7 @@ function academiesCards(academies) {
                 <img src="${iconPaths.mask[academy.mask]}" alt="Mask Icon" class="card-icon">
                 <img src="${iconPaths.towel[academy.towel]}" alt="Towel Icon" class="card-icon">
                 <img src="${iconPaths.fountain[academy.fountain]}" alt="Fountain Icon" class="card-icon">
+                <img src="${iconPaths.locker_room[academy.locker_room]}" alt="Locker Room Icon" class="card-icon">
             </div>
             <div class="Card-Hours">
                 <ul>
