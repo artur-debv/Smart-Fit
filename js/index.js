@@ -40,7 +40,7 @@ const iconPaths = {
         partial: 'assets/images/partial-fountain.png',
         not_allowed: 'assets/images/not-allowed-fountain.png'
     },
-   locker_room: {
+    locker_room: {
         allowed: 'assets/images/allowed-lockerroom.png',
         partial: 'assets/images/partial-lockerroom.png',
         closed: 'assets/images/closed-lockerroom.png'
@@ -51,9 +51,12 @@ function academiesCards(academies) {
     const cards = document.querySelector(".cards");
     cards.innerHTML = ''; // Limpa o conteúdo existente antes de adicionar novos cartões
 
+    const fragment = document.createDocumentFragment();
+
     academies.forEach(academy => {
-        cards.innerHTML += `
-        <div class="gyms">
+        const card = document.createElement('div');
+        card.className = 'gyms';
+        card.innerHTML = `
             <span class="card-status ${academy.opened ? 'status-open' : 'status-close'}">
                 ${academy.opened ? 'Aberto' : 'Fechado'}
             </span>
@@ -75,9 +78,11 @@ function academiesCards(academies) {
                     `).join('')}
                 </ul>
             </div>
-        </div>
-    `;
+        `;
+        fragment.appendChild(card);
     });
+
+    cards.appendChild(fragment); // Adiciona o fragmento ao DOM
 }
 
 const searchAcademies = async (event) => {
