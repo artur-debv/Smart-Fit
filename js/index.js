@@ -65,10 +65,10 @@ function academiesCards(academies) {
                 ${academy.content ? academy.content.replace(/<\/?[^>]+(>|$)/g, "") : academy.street}
             </p>
             <div class="card-image">
-                <img src="${iconPaths.mask[academy.mask]}" alt="Mask Icon" class="card-icon">
-                <img src="${iconPaths.towel[academy.towel]}" alt="Towel Icon" class="card-icon">
-                <img src="${iconPaths.fountain[academy.fountain]}" alt="Fountain Icon" class="card-icon">
-                <img src="${iconPaths.locker_room[academy.locker_room]}" alt="Locker Room Icon" class="card-icon">
+                ${academy.mask ? `<img src="${iconPaths.mask[academy.mask]}" alt="Mask Icon" class="card-icon">` : ''}
+                ${academy.towel ? `<img src="${iconPaths.towel[academy.towel]}" alt="Towel Icon" class="card-icon">` : ''}
+                ${academy.fountain ? `<img src="${iconPaths.fountain[academy.fountain]}" alt="Fountain Icon" class="card-icon">` : ''}
+                ${academy.locker_room ? `<img src="${iconPaths.locker_room[academy.locker_room]}" alt="Locker Room Icon" class="card-icon">` : ''}
             </div>
             <div class="Card-Hours">
                 <ul>
