@@ -72,10 +72,10 @@ function academiesCards(academies) {
             </div>
             <div class="Card-Hours">
                 <ul>
-                    ${academy.schedules.map(schedule => `
+                    ${academy.schedules ? academy.schedules.map(schedule => `
                         <li><strong>${schedule.weekdays}</strong></li>
                         <li>${schedule.hour}</li>
-                    `).join('')}
+                    `).join('') : ''}
                 </ul>
             </div>
         `;
