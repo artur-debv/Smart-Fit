@@ -1,4 +1,4 @@
-export const iconPaths = {
+export const Path = {
     mask: {
       required: 'assets/images/required-mask.png',
       recommended: 'assets/images/recommended-mask.png',
