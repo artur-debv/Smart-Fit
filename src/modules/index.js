@@ -1,7 +1,7 @@
-import { fetchApi } from './modules/fetchApi.js';
-import { filterAcademy } from './modules/filterAcademy.js';
-import { displayCount } from './modules/displayCount.js';
-import { academiesCards } from './modules/academiesCards.js';
+import { fetchApi } from './fetchApi.js';
+import { filterAcademy } from './filterAcademy.js';
+import { displayCount } from './count.js';
+import { academiesCards } from './academiesCards.js';
 
 const searchButton = document.querySelector(".find");
 
