@@ -1,22 +1,15 @@
-const searchButtons = document.querySelector(".search_button");
-const searchInput = document.querySelector(".search_input");
-const Status = document.querySelector(".status");
+import { fetchApi } from './fetchApi.js';
+import { filterAcademy } from './filterAcademy.js';
+import { displayCount } from './displayCount.js';
+import { academiesCards } from './academiesCards.js';
 
-searchButtons.addEventListener("click", async (event) => {
-    event.preventDefault();
+export const searchAcademies = async (searchValue) => {
+  const academies = await fetchApi();
+  const academiesFilter = filterAcademy(academies);
+  const filteredAcademies = academiesFilter.filter(academy => academy.title.toLowerCase().includes(searchValue));
 
-    const searchValue = searchInput.value.toLowerCase();
-    const academies = await fetchApi();
-    const academiesFilter = filterAcademy(academies);
-    const filteredAcademies = academiesFilter.filter(academy => academy.title.toLowerCase().includes(searchValue));
+  displayCount(filteredAcademies);
+  academiesCards(filteredAcademies);
 
-    displayCount(filteredAcademies);
-    academiesCards(filteredAcademies);
-
-    if (filteredAcademies.length === 0) {
-        Status.textContent = alert("Nenhum resultado encontrado");
-    } else {
-        Status.textContent = "";
-    }
-
-});
+  return filteredAcademies.length === 0 ? "Nenhum resultado encontrado" : "";
+};
