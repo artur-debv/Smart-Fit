@@ -29,7 +29,8 @@ const searchAcademies = async (event) => {
     displayCount(academiesFilter);
     academiesCards(academiesFilter);
   }
-  ClearOptions();
 }
+
+ClearOptions();
 
 searchButton.addEventListener("click", searchAcademies);
