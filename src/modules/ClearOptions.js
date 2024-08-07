@@ -1,11 +1,19 @@
 export const ClearOptions = (event) => {
-    const Closed = document.getElementById("closed");
     event.preventDefault();
-    const option = document.querySelectorAll("input[type=radio]");
-    option.forEach((option) => {
+    
+    // Seleciona o elemento com id 'closed'
+    const Closed = document.getElementById("closed");
+    
+    // Seleciona todos os inputs do tipo radio
+    const options = document.querySelectorAll("input[type=radio]");
+    
+    // Itera sobre cada input radio e desmarca-os
+    options.forEach((option) => {
         option.checked = false;
-    })
-
-    Closed.checked = false;
+    });
+    
+    // Desmarca o elemento 'Closed' se ele existir
+    if (Closed) {
+        Closed.checked = false;
+    }
 }
-
