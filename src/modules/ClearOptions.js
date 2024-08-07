@@ -1,13 +1,9 @@
-const buttonClean = document.querySelector(".clean");
+export const ClearOptions = () => {
+    const option = document.querySelectorAll("input[type=radio]");
+    option.forEach((option) => {
+        option.checked = false;
+    })
 
-const option = document.querySelectorAll("input[type=radio]");
+    Closed.checked = false;
+}
 
-const Closed = document.getElementById("closed");
-
-buttonClean.addEventListener("click", () => {
-   option.forEach((option) => {
-    option.checked = false;
-   })
-
-   Closed.checked = false;
-})
