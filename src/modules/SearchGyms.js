@@ -1,6 +1,5 @@
 import { fetchApi } from './fetchApi.js';
 import { filterAcademy } from './filterAcademy.js';
-import { displayCount } from './displayCount.js';
 import { academiesCards } from './academiesCards.js';
 
 export const searchAcademies = async (searchValue) => {
