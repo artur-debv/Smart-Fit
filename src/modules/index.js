@@ -3,9 +3,11 @@ import { filterAcademy } from './filterAcademy.js';
 import { displayCount } from './count.js';
 import { academiesCards } from './academiesCards.js';
 import { ClearOptions } from './ClearOptions.js';
+import { SearchGyms } from './SearchGyms.js';
 
 const searchButton = document.querySelector(".find");
-const clearButton = document.querySelector(".clean"); // Adicione um botão de limpeza
+const clearButton = document.querySelector(".clean"); 
+const ButtonSearch = document.querySelector(".search_button");
 
 const openAcademies = async () => {
   const academies = await fetchApi();
@@ -34,5 +36,6 @@ const searchAcademies = async (event) => {
 
 // Adiciona um listener ao botão de limpeza para chamar a função ClearOptions
 
+ButtonSearch.addEventListener("click", SearchGyms);
 clearButton.addEventListener("click", ClearOptions);
 searchButton.addEventListener("click", searchAcademies);
