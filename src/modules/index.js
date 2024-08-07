@@ -2,6 +2,7 @@ import { fetchApi } from './fetchApi.js';
 import { filterAcademy } from './filterAcademy.js';
 import { displayCount } from './count.js';
 import { academiesCards } from './academiesCards.js';
+import { ClearOptions } from './ClearOptions.js';
 
 const searchButton = document.querySelector(".find");
 
@@ -28,6 +29,7 @@ const searchAcademies = async (event) => {
     displayCount(academiesFilter);
     academiesCards(academiesFilter);
   }
+  ClearOptions();
 }
 
 searchButton.addEventListener("click", searchAcademies);
