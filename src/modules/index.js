@@ -5,6 +5,7 @@ import { academiesCards } from './academiesCards.js';
 import { ClearOptions } from './ClearOptions.js';
 
 const searchButton = document.querySelector(".find");
+const clearButton = document.querySelector(".clear"); // Adicione um botão de limpeza
 
 const openAcademies = async () => {
   const academies = await fetchApi();
@@ -31,6 +32,7 @@ const searchAcademies = async (event) => {
   }
 }
 
-ClearOptions();
+// Adiciona um listener ao botão de limpeza para chamar a função ClearOptions
 
+clearButton.addEventListener("click", ClearOptions);
 searchButton.addEventListener("click", searchAcademies);
