@@ -3,7 +3,7 @@ import { filterAcademy } from './filterAcademy.js';
 import { displayCount } from './count.js';
 import { academiesCards } from './academiesCards.js';
 import { ClearOptions } from './ClearOptions.js';
-import { SearchGyms, SearchGymss } from './SearchGyms.js';
+import { SearchGymss } from './SearchGyms.js';
 
 const searchButton = document.querySelector(".find");
 const clearButton = document.querySelector(".clean"); 
