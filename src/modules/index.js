@@ -5,7 +5,7 @@ import { academiesCards } from './academiesCards.js';
 import { ClearOptions } from './ClearOptions.js';
 
 const searchButton = document.querySelector(".find");
-const clearButton = document.querySelector(".clear"); // Adicione um botão de limpeza
+const clearButton = document.querySelector(".clean"); // Adicione um botão de limpeza
 
 const openAcademies = async () => {
   const academies = await fetchApi();
