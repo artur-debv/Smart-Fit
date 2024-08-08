@@ -64,7 +64,7 @@ const searchAcademies = async (event) => {
       };
     })
   }
-  searchButton.addEventListener("click", FilterGymsHours);
+ console.log(FilterGymsHours());
 }
 // Adiciona um listener ao botão de limpeza para chamar a função ClearOptions
 
