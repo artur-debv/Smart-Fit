@@ -62,7 +62,7 @@ const searchAcademies = async (event) => {
         ...academy,
         schedules: filtersHours
       };
-    }).filter(academy => academy.schedules.length > 0); // Remove academias sem horários válidos
+    })
   }
   searchButton.addEventListener("click", FilterGymsHours);
 }
