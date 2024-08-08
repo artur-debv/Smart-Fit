@@ -64,7 +64,7 @@ const searchAcademies = async (event) => {
       };
     }).filter(academy => academy.schedules.length > 0); // Remove academias sem horários válidos
   }
-  FilterGymsHours();
+  searchButton.addEventListener("click", FilterGymsHours);
 }
 // Adiciona um listener ao botão de limpeza para chamar a função ClearOptions
 
